@@ -1,16 +1,32 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html, body {
+  background-color: black;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.cta-button {
+  height: 85px;
+  border: 0;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-* {
-  box-sizing: border-box;
+.connect-wallet-button {
+  color: white;
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+}
+
+.mint-button {
+  background: -webkit-linear-gradient(left, #4e44ce, #35aee2);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
 }
