@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React, { useEffect, ReactChildren, ReactChild } from 'react';
 import Navbar from './navbar'
+import Footer from './footer';
 // import Carrousel from './carrousel'
  
 interface LayoutProps {
@@ -18,9 +19,12 @@ export default function Layout({ children }: LayoutProps) {
   }, []);
 
   return (
-    <div className="bg-grayskull bg-center bg-cover bg-no-repeat p-8 font-DotGothic16">
-      <Navbar />
-      {children}
+    <div className="bg-grayskull bg-center bg-cover bg-no-repeat font-DotGothic16 pb-10">
+      <div className='p-8'>
+        <Navbar />
+        {children}
+      </div>
+      <Footer />
     </div>
   )
 }

@@ -292,10 +292,6 @@ const CandyMachine = ({ walletAddress, mints, setMints }) => {
     const itemsRemaining = itemsAvailable - itemsRedeemed;
     const goLiveDate = candyMachine.data.goLiveDate.toNumber();
 
-    // console.log("===========>")
-    // console.log(candyMachine.data)
-    // console.log(candyMachine.itemsRedeemed)
-
     const goLiveDateTimeString = `${new Date(
       goLiveDate * 1000
     ).toGMTString()}`
@@ -344,20 +340,7 @@ const CandyMachine = ({ walletAddress, mints, setMints }) => {
     }
 
     setIsLoadingMints(false)
-  }, [])
-
-  // const renderMintedItems = () => (
-  //   <div className="gif-container">
-  //     <p className="sub-text">Minted Items ✨</p>
-  //     <div className="gif-grid">
-  //       {mints.map((mint) => (
-  //         <div className="gif-item" key={mint}>
-  //           <img src={mint} alt={`Minted NFT ${mint}`} />
-  //         </div>
-  //       ))}
-  //     </div>
-  //   </div>
-  // );
+  }, [setMints])
 
   const renderDropTimer = () => {
     // Get the current date and dropDate in a JavaScript Date object
@@ -387,15 +370,13 @@ const CandyMachine = ({ walletAddress, mints, setMints }) => {
           <p className="sub-text">Sold Out 🙊</p>
         ) : (
           <button
-            className="cta-button mint-button font-CarroisGothic mt-8"
+            className="cta-button mint-button font-CarroisGothic mt-8 hover:opacity-90"
             onClick={mintToken}
             disabled={isMinting}
           >
             MINT
           </button>
         )}
-      {/* {isLoadingMints && <p>LOADING MINTS...</p>}
-      {mints.length > 0 && renderMintedItems()} */}
     </div>
   ) : (
     <div className='flex flex-1'>

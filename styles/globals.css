@@ -3,7 +3,9 @@
 @import 'tailwindcss/utilities';
 
 html, body {
-  background-color: black;
+  background-color: #020415 !important;
+  padding:0;
+  margin:0;
 }
 
 .cta-button {

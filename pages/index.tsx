@@ -62,7 +62,7 @@ const Home: NextPage = () => {
 
   const renderNotConnectedContainer = () => (
     <button
-      className='cta-button mint-button font-CarroisGothic mt-8'
+      className='cta-button mint-button font-CarroisGothic mt-8 hover:opacity-90'
       onClick={connectWallet}
     >
       Connect to Wallet
@@ -83,8 +83,8 @@ const Home: NextPage = () => {
     <>
       <div className="flex flex-row justify-between items-center pt-12">
         <div className='flex-1 text-2xl text-white pr-4'>
-          <h1 className='text-5xl font-bold pb-4 font-PathwayGothicOne'>Masters of Universe NFT collection</h1>
-          <p>Imagine yourself back in the past with the epic batles between He-Man and Skeletor to conquer the Grayskull castle. Reconnect yourself with nostalgic past memories.</p>
+          <h1 className='text-5xl font-bold pb-4 font-PathwayGothicOne'>Masters of Universe limited NFT collection</h1>
+          <p>Imagine yourself back in the past with the epic battles between He-Man and Skeletor to conquer the Grayskull castle. Reconnect with your nostalgic past memories.</p>
           {!walletAddress && renderNotConnectedContainer()}
           {walletAddress && <CandyMachine walletAddress={window.solana} mints={mints} setMints={setMints} />}
         </div>
@@ -93,7 +93,6 @@ const Home: NextPage = () => {
         </div>
       </div>
       {walletAddress && <MintedNFTs mints={mints} />}
-      <Footer />
     </>
   );
 };
